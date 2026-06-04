@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-green-institutional: #4A5E23;
+    --color-green-lime: #C8D400;
+    --color-green-mint: #A8C66C;
+    --color-brand-black: #3D3935;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+    color: #3D3935;
+    background-color: #ffffff;
+  }
+
+  /* Focus visible accesible en todos los interactivos */
+  *:focus-visible {
+    outline: 2px solid #4A5E23;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .tracking-institutional {
+    letter-spacing: 0.08em;
+  }
+
+  .text-green-institutional {
+    color: #4A5E23;
+  }
+
+  .bg-green-institutional {
+    background-color: #4A5E23;
+  }
+
+  .text-green-lime {
+    color: #C8D400;
+  }
+
+  .bg-green-lime {
+    background-color: #C8D400;
+  }
+
+  .text-green-mint {
+    color: #A8C66C;
+  }
+
+  .bg-green-mint {
+    background-color: #A8C66C;
+  }
+
+  .text-brand-black {
+    color: #3D3935;
+  }
+
+  .bg-brand-black {
+    background-color: #3D3935;
+  }
+
+  /* Patrón geométrico de hojas entrelazadas como textura decorativa */
+  .leaf-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%234A5E23' stroke-width='0.5' opacity='0.15'%3E%3Cellipse cx='15' cy='15' rx='10' ry='14' transform='rotate(-30 15 15)'/%3E%3Cellipse cx='45' cy='15' rx='10' ry='14' transform='rotate(30 45 15)'/%3E%3Cellipse cx='30' cy='45' rx='10' ry='14'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .leaf-pattern-light {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.08'%3E%3Cellipse cx='15' cy='15' rx='10' ry='14' transform='rotate(-30 15 15)'/%3E%3Cellipse cx='45' cy='15' rx='10' ry='14' transform='rotate(30 45 15)'/%3E%3Cellipse cx='30' cy='45' rx='10' ry='14'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
