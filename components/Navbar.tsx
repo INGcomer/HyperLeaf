@@ -6,10 +6,11 @@ import Link from "next/link";
 
 const NAV_LINKS = [
   { href: "#quienes-somos", label: "Quiénes somos" },
-  { href: "#segmentos", label: "Segmentos" },
-  { href: "#propuesta", label: "Propuesta" },
-  { href: "#comunidad", label: "Comunidad" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#condiciones", label: "Condiciones" },
+  { href: "#proceso", label: "Cómo funciona" },
+  { href: "#productos", label: "Productos" },
+  { href: "#beneficios", label: "Beneficios" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function Navbar() {
@@ -39,7 +40,7 @@ export default function Navbar() {
           <Image
             src="/logo.svg"
             alt="HyperLeaf Asociación Civil"
-            width={160}
+            width={142}
             height={36}
             priority
             className="h-8 w-auto lg:h-10"

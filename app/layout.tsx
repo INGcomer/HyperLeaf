@@ -1,26 +1,30 @@
 // Layout raíz: metadata global, JSON-LD Schema.org, importación de fuente
 import type { Metadata } from "next";
 import "./globals.css";
-
-const SITE_URL = "https://hyperleaf.com.ar";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import {
+  SITE_URL,
+  INSTAGRAM_URL,
+  WHATSAPP_DISPLAY,
+} from "@/lib/site-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "HyperLeaf — Asociación Civil Cannabis Legal Mendoza",
+    default: "HyperLeaf — Asociación Civil de Cannabis Medicinal en Mendoza",
     template: "%s | HyperLeaf Asociación Civil",
   },
   description:
-    "HyperLeaf es una asociación civil de cannabis legal con sede en Chacras de Coria, Mendoza. Acceso seguro, legal y consciente al cannabis medicinal y recreativo bajo el marco REPROCANN y la Ley 27.350.",
+    "HyperLeaf es una asociación civil de cannabis medicinal con sede en Chacras de Coria, Mendoza. Acceso legal, seguro y acompañado a tratamientos con cannabis bajo REPROCANN y la Ley 27.350, con seguimiento de profesionales especializados.",
   keywords: [
-    "cannabis legal Mendoza",
+    "cannabis medicinal Mendoza",
     "asociación civil cannabis Mendoza",
     "REPROCANN Mendoza",
-    "cannabis medicinal Mendoza",
-    "cannabis recreativo Mendoza",
+    "cannabis legal Mendoza",
+    "aceite CBD Mendoza",
     "HyperLeaf",
     "dispensario cannabis Cuyo",
-    "aceite CBD Mendoza",
+    "cannabis recreativo Mendoza",
     "club cannabis Mendoza",
     "cannabis Chacras de Coria",
   ],
@@ -42,23 +46,23 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: SITE_URL,
     siteName: "HyperLeaf Asociación Civil",
-    title: "HyperLeaf — Cannabis Legal en Mendoza",
+    title: "HyperLeaf — Cannabis Medicinal Legal en Mendoza",
     description:
-      "Acceso seguro y legal al cannabis en Mendoza. Asociación civil bajo REPROCANN y Ley 27.350. Cannabis medicinal y recreativo en Chacras de Coria.",
+      "Acompañamiento profesional y acceso legal al cannabis medicinal en Mendoza. Asociación civil bajo REPROCANN y Ley 27.350, con productos certificados y seguimiento médico continuo.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "HyperLeaf — Asociación Civil Cannabis Legal Mendoza",
+        alt: "HyperLeaf — Asociación Civil de Cannabis Medicinal en Mendoza",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HyperLeaf — Cannabis Legal en Mendoza",
+    title: "HyperLeaf — Cannabis Medicinal Legal en Mendoza",
     description:
-      "Asociación civil de cannabis legal en Mendoza. Acceso seguro bajo REPROCANN y Ley 27.350.",
+      "Asociación civil de cannabis medicinal en Mendoza. Acompañamiento profesional bajo REPROCANN y Ley 27.350.",
     images: ["/og-image.jpg"],
   },
   alternates: {
@@ -66,7 +70,8 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD Schema.org tipo Organization
+// JSON-LD Schema.org tipo Organization — ayuda a buscadores y asistentes
+// a entender quién es HyperLeaf, dónde está y cómo contactarla.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -74,7 +79,7 @@ const jsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.svg`,
   description:
-    "Asociación civil de cannabis legal con sede en Chacras de Coria, Mendoza, Argentina. Operamos bajo el marco regulatorio REPROCANN y la Ley 27.350.",
+    "Asociación civil de cannabis medicinal con sede en Chacras de Coria, Mendoza, Argentina. Operamos bajo el marco regulatorio REPROCANN y la Ley 27.350, acompañando a nuestros asociados con seguimiento médico profesional.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Chacras de Coria",
@@ -85,12 +90,10 @@ const jsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
+    telephone: WHATSAPP_DISPLAY,
     availableLanguage: "Spanish",
   },
-  sameAs: [
-    "https://www.instagram.com/hyperleaf.ar",
-    "https://www.facebook.com/hyperleaf.ar",
-  ],
+  sameAs: [INSTAGRAM_URL],
   areaServed: {
     "@type": "State",
     name: "Mendoza",
@@ -127,7 +130,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased font-sans">{children}</body>
+      <body className="antialiased font-sans">
+        {children}
+        {/* Botón flotante de WhatsApp — visible en todas las páginas */}
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }

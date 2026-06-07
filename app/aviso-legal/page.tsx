@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CONTACT_EMAIL, WHATSAPP_DISPLAY, whatsappUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Aviso Legal",
@@ -213,8 +214,8 @@ export default function AvisoLegal() {
               Toda persona tiene derecho a acceder, rectificar, actualizar y suprimir
               sus datos personales. Para ejercer estos derechos, podés contactarnos
               en{" "}
-              <a href="mailto:hola@hyperleaf.com.ar" className="text-[#4A5E23] font-semibold hover:underline">
-                hola@hyperleaf.com.ar
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#4A5E23] font-semibold hover:underline">
+                {CONTACT_EMAIL}
               </a>
               .
             </p>
@@ -251,8 +252,19 @@ export default function AvisoLegal() {
               <p className="text-sm font-light text-gray-600">Chacras de Coria, Luján de Cuyo, Mendoza, Argentina</p>
               <p className="text-sm font-light text-gray-600">
                 Email:{" "}
-                <a href="mailto:hola@hyperleaf.com.ar" className="text-[#4A5E23] font-semibold hover:underline">
-                  hola@hyperleaf.com.ar
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#4A5E23] font-semibold hover:underline">
+                  {CONTACT_EMAIL}
+                </a>
+              </p>
+              <p className="text-sm font-light text-gray-600">
+                WhatsApp:{" "}
+                <a
+                  href={whatsappUrl("Hola HyperLeaf, tengo una consulta sobre el aviso legal.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#4A5E23] font-semibold hover:underline"
+                >
+                  {WHATSAPP_DISPLAY}
                 </a>
               </p>
             </div>

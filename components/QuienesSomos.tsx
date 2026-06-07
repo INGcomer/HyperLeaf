@@ -7,17 +7,17 @@ const VALORES = [
   {
     icon: "🌿",
     title: "Calidad",
-    desc: "Producto cultivado con estándares rigurosos de sanidad vegetal, trazabilidad completa y sin agroquímicos.",
+    desc: "Producción propia con estándares rigurosos, trazabilidad completa y análisis de laboratorio disponible en cada lote.",
   },
   {
-    icon: "🤝",
-    title: "Comunidad",
-    desc: "Construimos vínculos genuinos con nuestros asociados. Tu voz importa en cada decisión de la organización.",
+    icon: "🩺",
+    title: "Acompañamiento",
+    desc: "Red de profesionales especializados en cannabis medicinal que te guían antes, durante y después de tu tratamiento.",
   },
   {
     icon: "📚",
     title: "Educación",
-    desc: "Fomentamos el uso responsable e informado, desmitificando el cannabis con evidencia científica y acompañamiento profesional.",
+    desc: "Promovemos el uso responsable e informado, acercando información clara y rigurosa a pacientes y familias.",
   },
 ];
 
@@ -39,11 +39,21 @@ export default function QuienesSomos() {
           <div>
             <h2
               id="quienes-somos-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#3D3935] leading-tight mb-8"
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#3D3935] leading-tight mb-6"
             >
-              Una asociación civil construida
-              <span className="text-[#4A5E23]"> para los mendocinos.</span>
+              Una asociación civil pensada
+              <span className="text-[#4A5E23]"> para tu bienestar.</span>
             </h2>
+
+            <p className="text-base lg:text-lg font-light text-[#3D3935] leading-relaxed mb-8">
+              En Mendoza, más de{" "}
+              <strong className="font-semibold">150.000 personas</strong>{" "}
+              consumen cannabis y más del{" "}
+              <strong className="font-semibold">12% de los adultos</strong> ya
+              lo incorporó a su vida cotidiana. Es una demanda real que crece
+              año a año — y que merece un canal legal, seguro y acompañado por
+              profesionales. Para eso existe HyperLeaf.
+            </p>
 
             {/* Misión */}
             <div className="mb-8">
@@ -51,10 +61,10 @@ export default function QuienesSomos() {
                 Misión
               </h3>
               <p className="text-base lg:text-lg font-light text-[#3D3935] leading-relaxed">
-                Garantizar el acceso legal, seguro y asequible al cannabis a
-                toda persona mayor de 18 años en Mendoza, priorizando la
-                salud, la libertad individual y el respeto por el marco
-                normativo vigente.
+                Acompañar a cada asociado en el acceso legal, seguro y guiado
+                al cannabis medicinal en Mendoza, priorizando su salud, su
+                tranquilidad y el respeto por el marco normativo vigente —
+                Ley 27.350 y REPROCANN.
               </p>
             </div>
 
@@ -64,9 +74,10 @@ export default function QuienesSomos() {
                 Visión
               </h3>
               <p className="text-base lg:text-lg font-light text-[#3D3935] leading-relaxed">
-                Ser la asociación civil cannábica de referencia en Cuyo:
-                reconocida por su transparencia, su impacto comunitario y por
-                elevar los estándares de la industria en Argentina.
+                Ser la asociación civil de cannabis medicinal de referencia en
+                Cuyo: reconocida por la calidad de sus productos, el
+                acompañamiento profesional a sus asociados y su compromiso con
+                el bienestar de la comunidad mendocina.
               </p>
             </div>
 
